@@ -6,7 +6,9 @@
 }
 
 .prog-list-active:before {
+  width: 2em;
   display: inline-block;
+  text-align: center;
   font-family: FontAwesome;
   content: "\f1ce";
   -webkit-animation: rotating 2s linear infinite;
@@ -29,11 +31,11 @@
 }
 
 .prog-list-completed:before {
-    font-family: FontAwesome;
-    top:0;
-    left:-5px;
-    padding-right:10px;
-    content: "\f00c";
+  width: 2em;
+  display: inline-block;
+  text-align: center;
+  font-family: FontAwesome;
+  content: "\f00c";
 }
 
 .prog-list-waiting {
@@ -43,11 +45,11 @@
 }
 
 .prog-list-waiting:before {
-    font-family: FontAwesome;
-    top:0;
-    left:-5px;
-    padding-right:10px;
-    content: "\f250";
+  width: 2em;
+  display: inline-block;
+  text-align: center;
+  font-family: FontAwesome;
+  content: "\f250";
 }
 
 .prog-list-inactive {
@@ -57,11 +59,11 @@
 }
 
 .prog-list-inactive:before {
-    font-family: FontAwesome;
-    top:0;
-    left:-5px;
-    padding-right:10px;
-    content: "\f10c";
+  width: 2em;
+  display: inline-block;
+  text-align: center;
+  font-family: FontAwesome;
+  content: "\f10c";
 }
 
 .prog-list-failed {
@@ -71,9 +73,9 @@
 }
 
 .prog-list-failed:before {
-    font-family: FontAwesome;
-    top:0;
-    left:-5px;
-    padding-right:10px;
-    content: "\f00d";
+  width: 2em;
+  display: inline-block;
+  text-align: center;
+  font-family: FontAwesome;
+  content: "\f00d";
 }
