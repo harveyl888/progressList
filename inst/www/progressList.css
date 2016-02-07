@@ -6,6 +6,7 @@
 }
 
 .prog-list-active:before {
+  display: inline-block;
   font-family: FontAwesome;
   content: "\f1ce";
   -webkit-animation: rotating 2s linear infinite;
@@ -28,6 +29,7 @@
 }
 
 .prog-list-completed:before {
+    font-family: FontAwesome;
     top:0;
     left:-5px;
     padding-right:10px;
@@ -69,6 +71,7 @@
 }
 
 .prog-list-failed:before {
+    font-family: FontAwesome;
     top:0;
     left:-5px;
     padding-right:10px;
