@@ -1,0 +1,76 @@
+
+.prog-list-active {
+  position:relative;
+  font-size: 200%;
+  color: blue;
+}
+
+.prog-list-active:before {
+  font-family: FontAwesome;
+  content: "\f1ce";
+  -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+}
+
+@-webkit-keyframes rotating {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.prog-list-completed {
+  position:relative;
+  font-size: 200%;
+  color: green;
+}
+
+.prog-list-completed:before {
+    top:0;
+    left:-5px;
+    padding-right:10px;
+    content: "\f00c";
+}
+
+.prog-list-waiting {
+  position:relative;
+  font-size: 200%;
+  color: black;
+}
+
+.prog-list-waiting:before {
+    font-family: FontAwesome;
+    top:0;
+    left:-5px;
+    padding-right:10px;
+    content: "\f250";
+}
+
+.prog-list-inactive {
+  position:relative;
+  font-size: 200%;
+  color: gray;
+}
+
+.prog-list-inactive:before {
+    font-family: FontAwesome;
+    top:0;
+    left:-5px;
+    padding-right:10px;
+    content: "\f10c";
+}
+
+.prog-list-failed {
+  position:relative;
+  font-size: 200%;
+  color: red;
+}
+
+.prog-list-failed:before {
+    top:0;
+    left:-5px;
+    padding-right:10px;
+    content: "\f00d";
+}
