@@ -18,3 +18,15 @@ progressList <- function(inputId, label, status) {
   )
   sx_progresslist
 }
+
+#' Update a progress flag to a new state
+#'
+#' @param session The session object passed to function given to \code{shinyServer}
+#' @param value Text string of the status to update
+#' @param newstatus Updated status
+#'
+#' @export
+progUpdate <- function(session, value, newstatus) {
+  session$sendCustomMessage('progUpdate', message = list(label=value, newstatus=newstatus))
+}
+
