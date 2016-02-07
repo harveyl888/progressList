@@ -8,3 +8,7 @@ Maintainer: Harvey Lieberman <harvey.lieberman@gmail.com>
 Description: Display and update status for a number of sequential tasks
 License: GPL-3
 LazyData: TRUE
+Imports:
+    htmltools,
+    shiny
+RoxygenNote: 5.0.0
