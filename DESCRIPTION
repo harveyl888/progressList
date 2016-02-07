@@ -1,0 +1,10 @@
+Package: progressList
+Type: Package
+Title: Status of sequential tasks
+Version: 0.1
+Date: 2016-02-07
+Author: Harvey Lieberman
+Maintainer: Harvey Lieberman <harvey.lieberman@gmail.com>
+Description: Display and update status for a number of sequential tasks
+License: GPL-3
+LazyData: TRUE
