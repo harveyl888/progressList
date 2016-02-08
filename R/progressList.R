@@ -1,3 +1,12 @@
+.checkStates <- function(s) {
+  progressListStates <- c('active', 'completed', 'waiting', 'inactive', 'failed')
+  if(all(s %in% progressListStates)) {
+    return(TRUE)
+  } else {
+    return(paste0('Unknown state(s) ', paste0(s[!s %in% progressListStates], collapse = ', ') ,'.  Allowable states: ', paste0(progressListStates, collapse = ', ')))
+  }
+}
+
 #' Create a new progressList
 #'
 #' @param inputId The input id of the widget
@@ -7,6 +16,9 @@
 #' @export
 progressList <- function(inputId, label, status) {
   shiny::addResourcePath("prog", system.file('www', package='progressList'))
+  statusOK <- .checkStates(status)
+  if (!statusOK == TRUE) stop(statusOK)
+#  if(!.checkStates(status) == TRUE) stop(.checkStates(status))
   iconTags <- list()
   for (i in 1:length(label)) {
     iconTags[[i]] <- shiny::tags$p(id = paste0(inputId, '_', i), proglistid=label[[i]], class=paste0("prog-list-", status[[i]]), label[[i]])
@@ -27,6 +39,8 @@ progressList <- function(inputId, label, status) {
 #'
 #' @export
 progUpdate <- function(session, value, newstatus) {
+  statusOK <- .checkStates(newstatus)
+  if (!statusOK == TRUE) stop(statusOK)
   session$sendCustomMessage('progUpdate', message = list(label=value, newstatus=newstatus))
 }
 
@@ -38,6 +52,8 @@ progUpdate <- function(session, value, newstatus) {
 #'
 #' @export
 progUpdateList <- function(session, label, status) {
+  statusOK <- .checkStates(status)
+  if (!statusOK == TRUE) stop(statusOK)
   for (i in 1:length(label)) {
     session$sendCustomMessage('progUpdate', message = list(label=label[[i]], newstatus=status[[i]]))
   }
