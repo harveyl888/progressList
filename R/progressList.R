@@ -30,3 +30,15 @@ progUpdate <- function(session, value, newstatus) {
   session$sendCustomMessage('progUpdate', message = list(label=value, newstatus=newstatus))
 }
 
+#' Update multiple flags to new states
+#'
+#' @param session The session object passed to function given to \code{shinyServer}
+#' @param label List of labels to update
+#' @param status List of new states
+#'
+#' @export
+progUpdateList <- function(session, label, status) {
+  for (i in 1:length(label)) {
+    session$sendCustomMessage('progUpdate', message = list(label=label[[i]], newstatus=status[[i]]))
+  }
+}
