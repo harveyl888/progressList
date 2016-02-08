@@ -28,4 +28,5 @@ A number of subprocesses can be updated using
 ##Still to do
 This is just a prototype.  There are still lots to do.
 
+![alt text](./readme_resources/progressList example.png)
 
