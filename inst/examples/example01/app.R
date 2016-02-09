@@ -57,23 +57,16 @@ server <- function(input, output, session) {
   runProcess <- function(n) {
     # run a specific process
     # this could double up as a main processing routine in which data are passed between processes
-    if (n == 1) {
-      out <- process_01()
-    } else if (n == 2) {
-      out <- process_02()
-    } else if (n == 3) {
-      out <- process_03()
-    } else if (n == 4) {
-      out <- process_04()
-    } else if (n == 5) {
-      out <- process_05()
-    } else if (n == 6) {
-      out <- process_06()
-    } else if (n == 7) {
-      out <- process_07()
-    } else {
-      return (FALSE)
-    }
+    out <- switch(n,
+                  process_01(),
+                  process_02(),
+                  process_03(),
+                  process_04(),
+                  process_05(),
+                  process_06(),
+                  process_07(),
+                  FALSE
+    )
     return(out)
   }
 
