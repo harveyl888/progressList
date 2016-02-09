@@ -56,6 +56,7 @@ server <- function(input, output, session) {
 
   runProcess <- function(n) {
     # run a specific process
+    # this could double up as a main processing routine in which data are passed between processes
     if (n == 1) {
       out <- process_01()
     } else if (n == 2) {
@@ -100,6 +101,9 @@ server <- function(input, output, session) {
   output$txtExplanation <- renderPrint({
     cat('Example of progressList.\nIn this example seven subprocesses are defined.\nSubprocess 3 is inactive and therefore skipped.\nSubprocess 6 is designed to fail and therefore subprocess 7 is never started.')
   })
+
+  txt1 <- renderPrint({input$pl1_1})
+
 }
 
 ui <- fluidPage(titlePanel(title = 'progressList example'),
@@ -112,7 +116,8 @@ ui <- fluidPage(titlePanel(title = 'progressList example'),
            actionButton('butReset', 'reset', class = 'btn-success')
     ),
     column(8, verbatimTextOutput('txtExplanation'))
-  )
+  ),
+  verbatimTextOutput('txt1')
 )
 
 shinyApp(ui=ui, server=server)

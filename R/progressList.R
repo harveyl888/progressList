@@ -18,7 +18,6 @@ progressList <- function(inputId, label, status) {
   shiny::addResourcePath("prog", system.file('www', package='progressList'))
   statusOK <- .checkStates(status)
   if (!statusOK == TRUE) stop(statusOK)
-#  if(!.checkStates(status) == TRUE) stop(.checkStates(status))
   iconTags <- list()
   for (i in 1:length(label)) {
     iconTags[[i]] <- shiny::tags$p(id = paste0(inputId, '_', i), proglistid=label[[i]], class=paste0("prog-list-", status[[i]]), label[[i]])
