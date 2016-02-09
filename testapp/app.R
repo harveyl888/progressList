@@ -1,7 +1,7 @@
 library(shiny)
 library(progressList)
 
-prog.labels <- c('read file', 'data reduction', 'normalization', 'trends', 'visualization')
+prog.labels <- c('active', 'completed', 'waiting', 'inactive', 'failed')
 prog.status <- c('active', 'completed', 'waiting', 'inactive', 'failed')
 
 server <- function(input, output, session) {
@@ -14,8 +14,8 @@ server <- function(input, output, session) {
 ui <- fluidPage(
   titlePanel(title = 'progressList example'),
   br(),
-  progressList('progresslist1', prog.labels, prog.status),
-  actionButton('butChange', 'change status #2-4')
+  progressList('progresslist1', prog.labels, prog.status)
+#  actionButton('butChange', 'change status #2-4')
 )
 
 shinyApp(ui=ui, server=server)
